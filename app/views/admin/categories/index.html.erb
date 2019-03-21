@@ -1,0 +1,35 @@
+<section class="admin-categories-index">
+
+  <header class="page-header">
+<h1>Admin::Categories#index</h1>
+  </header>
+
+  <div class="well">
+    <%= link_to '+ New category', [:new, :admin, :category], class: 'btn btn-info' %>
+  </div>
+
+  <div class="panel panel-default categories">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Image</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      raise categories.inspect
+        <% @categories.each do | c | %>
+        <% render partial: "admin/categories/category", locals: { category: c } %>
+        <%render "admin/categories/category", category: category %>
+        <%render category, partial: "admin/categories/category" %>
+        <% end %>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
