@@ -5,6 +5,19 @@
   </header>
 
   <div class="order-summary jumbotron">
+
+   <div class="col-sm-8">
+        <dl class="dl-horizontal">
+          <dt>Name</dt>
+          <dd><%= @product.name %></dd>
+          <dt>Description</dt>
+          <dd><%= @product.description %></dd>
+          <dt>Quantity</dt>
+          <dd><%= @product.quantity %></dd>
+          <dt>Total</dt>
+          <dd><%= @product.quantity * @product.price %></dd>
+        </dl>
+      </div>
     <h4>Thank you for your order!</h4>
   </div>
 
