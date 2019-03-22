@@ -20,8 +20,14 @@
         </tr>
       </thead>
       <tbody>
+<<<<<<< HEAD
         <% @categories.each do | c | %>
         <%render partial: "admin/categories/category", locals: { category: c } %>
+=======
+      raise categories.inspect
+        <% @categories.each do | c | %>
+        <% render partial: "admin/categories/category", locals: { category: c } %>
+>>>>>>> 1817b6b3597b626dc0afc98451a9dca99392be40
         <%render "admin/categories/category", category: category %>
         <%render category, partial: "admin/categories/category" %>
         <% end %>
