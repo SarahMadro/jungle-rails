@@ -19,7 +19,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find params[:id]
+    @product = Product.find params[:category_id]
     @product.destroy
     redirect_to [:admin, :products], notice: 'Product deleted!'
   end
