@@ -4,23 +4,23 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
-  <div class="order-summary jumbotron">
-
-   <div class="col-sm-8">
-        <dl class="dl-horizontal">
-          <dt>Name</dt>
-          <dd><%= @product.name %></dd>
-          <dt>Description</dt>
-          <dd><%= @product.description %></dd>
-          <dt>Quantity</dt>
-          <dd><%= @product.quantity %></dd>
-          <dt>Total</dt>
-          <dd><%= @product.quantity * @product.price %></dd>
-        </dl>
-      </div>
-    <h4>Thank you for your order!</h4>
+ <% @line_items.each do | item | %>
+  <% @product = Product.find(item.product_id) %>
+  <% @image = Product.find(item.product_id) %>
+    <dt>Name</dt>
+    <dd><%= @product.name %></dd>
+    <dd> <%= @product.image %></dd>
+    <dt>Description</dt>
+    <dd><%= @product.description %></dd>
+    <dt>Quantity</dt>
+    <dd><%= item.quantity %></dd>
+    <dt>Total</dt>
+    <dd><%= item.quantity * item.item_price_cents %></dd>
+    </dl>
+  <% end %>
   </div>
-
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
 </section>
+
+
