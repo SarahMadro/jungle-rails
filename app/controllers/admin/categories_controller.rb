@@ -1,4 +1,7 @@
 class Admin::CategoriesController < ApplicationController
+
+  ApplicationHelper::http_authenticate
+
   def new
     @category = Category.new
   end
