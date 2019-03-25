@@ -1,10 +1,7 @@
 class ReceiptMailer < ApplicationMailer
 
-  default from: "no-reply@jungle.com"
-
-  def receipt_email
-    @user = params[:user]
-    email_with_name = % ("#{@user.name" <#{@user.email}>)
-    mail(to: @user.email, subject: "JUNGLE order: " @order_id)
+  def receipt_email order
+    @order = order
+    mail(to: order.email, subject: 'Order Receipt')
   end
 end
